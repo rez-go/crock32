@@ -9,7 +9,7 @@ import (
 	"bytes"
 	"testing"
 
-	"github.com/ilius/crock32"
+	"github.com/rez-go/crock32"
 )
 
 func BenchmarkBase32Encode(b *testing.B) {

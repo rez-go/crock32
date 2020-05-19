@@ -10,7 +10,7 @@ import (
 	"encoding/hex"
 	"testing"
 
-	"github.com/ilius/crock32"
+	"github.com/rez-go/crock32"
 )
 
 var stringTests = []struct {

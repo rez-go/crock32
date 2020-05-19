@@ -11,7 +11,7 @@ A comprehensive suite of tests is provided to ensure proper functionality.
 ## Installation and Updating
 
 ```bash
-$ go get -u github.com/ilius/crock32
+$ go get -u github.com/rez-go/crock32
 ```
 
 ## License

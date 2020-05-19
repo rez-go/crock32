@@ -8,7 +8,7 @@ package crock32_test
 import (
 	"fmt"
 
-	"github.com/ilius/crock32"
+	"github.com/rez-go/crock32"
 )
 
 // This example demonstrates how to decode modified base32 encoded data.
