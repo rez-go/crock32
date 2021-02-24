@@ -8,6 +8,7 @@ package crock32_test
 import (
 	"bytes"
 	"encoding/hex"
+	"strings"
 	"testing"
 
 	"github.com/rez-go/crock32"
@@ -60,6 +61,20 @@ func TestBase32(t *testing.T) {
 	for _, test := range stringTests {
 		tmp := []byte(test.in)
 		if res := crock32.Encode(tmp); res != test.out {
+			t.Errorf(
+				"Encode test in=%#v failed: got: %s want: %s",
+				test.in,
+				res,
+				test.out,
+			)
+			continue
+		}
+	}
+
+	// Encode (lower) tests
+	for _, test := range stringTests {
+		tmp := []byte(test.in)
+		if res := crock32.EncodeLower(tmp); res != strings.ToLower(test.out) {
 			t.Errorf(
 				"Encode test in=%#v failed: got: %s want: %s",
 				test.in,

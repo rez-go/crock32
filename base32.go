@@ -53,7 +53,7 @@ func Decode(b string) ([]byte, error) {
 }
 
 // encode and return check number (0 to 36)
-func encode(b []byte, wantCheck bool) (string, uint8) {
+func encode(b []byte, alphabet string, wantCheck bool) (string, uint8) {
 	x := new(big.Int)
 	x.SetBytes(b)
 
@@ -90,6 +90,12 @@ func encode(b []byte, wantCheck bool) (string, uint8) {
 
 // Encode encodes a byte slice to a modified base32 string.
 func Encode(b []byte) string {
-	output, _ := encode(b, false)
+	output, _ := encode(b, alphabet, false)
+	return output
+}
+
+// EncodeLower encodes a byte slice to a modified base32 lower-cased string.
+func EncodeLower(b []byte) string {
+	output, _ := encode(b, alphabetLower, false)
 	return output
 }

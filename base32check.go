@@ -44,7 +44,16 @@ func getCheckValue(b byte) uint8 {
 }
 
 func CheckEncode(b []byte) string {
-	answer, mod := encode(b, true)
+	answer, mod := encode(b, alphabet, true)
+	if mod >= 37 {
+		panic(fmt.Sprintf("invalid check mod=%v", mod))
+	}
+	checkStr := string(getCheckByte(mod))
+	return answer + checkStr
+}
+
+func CheckEncodeLower(b []byte) string {
+	answer, mod := encode(b, alphabetLower, true)
 	if mod >= 37 {
 		panic(fmt.Sprintf("invalid check mod=%v", mod))
 	}

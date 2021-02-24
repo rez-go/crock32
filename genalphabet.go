@@ -28,6 +28,9 @@ package crock32
 const (
 	// alphabet is the modified base32 alphabet used by Bitcoin.
 	alphabet = "0123456789ABCDEFGHJKMNPQRSTVWXYZ"
+	// alphabetLower is the lower-cased version of alphabet. It's
+	// cheaper to use lower-cased alphabet than lower-casing the results.
+	alphabetLower = "0123456789abcdefghjkmnpqrstvwxyz"
 
 	alphabetIdx0 = '0'
 )
